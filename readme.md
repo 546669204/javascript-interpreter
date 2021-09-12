@@ -47,10 +47,10 @@
 
 ### dep
 
-https://github.com/facebook/jest
-https://github.com/acornjs/acorn
-https://github.com/babel/babel
+https://github.com/facebook/jest  
+https://github.com/acornjs/acorn  
+https://github.com/babel/babel  
 
-https://262.ecma-international.org/5.1/#sec-12.1
-https://developer.mozilla.org/
-https://astexplorer.net/
+https://262.ecma-international.org/5.1/#sec-12.1  
+https://developer.mozilla.org/  
+https://astexplorer.net/  
