@@ -1,0 +1,62 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    #strategy:
+    #  matrix:
+    #    node-version: [10.x, 12.x, 14.x, 15.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 15.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: 15.x
+    - run: npm ci
+    - run: npm run build --if-present
+    #- run: npm test
+    
+    - name: GitHub Pages
+      # You may pin to the exact commit or the version.
+      # uses: crazy-max/ghaction-github-pages@47836d5feff6e01257a3ff5faf9a04f2f2454012
+      uses: crazy-max/ghaction-github-pages@v2.4.1
+      with:
+        # Git domain (default github.com)
+        #domain: # optional, default is github.com
+        # GitHub repository where assets will be deployed (default $GITHUB_REPOSITORY)
+        #repo: 520-gift-AR
+        # Git branch where assets will be deployed
+        target_branch: gh-pages
+        # Create incremental commit instead of doing push force
+        #keep_history: # optional, default is false
+        # Allow an empty commit to be created
+        #allow_empty_commit: # optional, default is true
+        # Build directory to deploy
+        build_dir: dist 
+        # The committer name and email address
+        #committer: # optional
+        # The author name and email address
+        #author: # optional
+        # Commit message
+        #commit_message: # optional
+        # Write the given domain name to the CNAME file
+        #fqdn: # optional
+        # Allow Jekyll to build your site
+        #jekyll: # optional, default is true
+        # If enabled, nothing will be pushed
+        #dry-run: # optional, default is false
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
