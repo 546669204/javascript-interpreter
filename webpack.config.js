@@ -23,8 +23,8 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html',
-            filename: "main.html",
+            template: 'demo.html',
+            filename: "index.html",
             chunks: ["main"]
         }),
         new webpack.DefinePlugin({
