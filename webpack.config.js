@@ -12,7 +12,9 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         library:"jsInterpreter",// 在全局变量中增加一个library变量
-        libraryTarget:"umd"
+        libraryTarget:"umd",
+        globalObject:"this",
+        umdNamedDefine:true
     },
     devServer: {
         open: false,

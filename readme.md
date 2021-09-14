@@ -39,11 +39,22 @@
 * [x] WhileStatement        while
 * [x] WithStatement         with
 
+### TEST
+
+```sh
+# 安装依赖
+yarn
+# 构建成果
+yarn build
+# 运行jest测试
+yarn test
+```
+
 ### TODO
 
 * [ ] 递归转循环
 * [ ] 效率升级
-* [ ] jest test262 测试用例
+* [x] jest test262 测试用例
 
 ### dep
 
@@ -54,3 +65,4 @@ https://github.com/babel/babel
 https://262.ecma-international.org/5.1/#sec-12.1  
 https://developer.mozilla.org/  
 https://astexplorer.net/  
+https://github.com/tc39/test262  

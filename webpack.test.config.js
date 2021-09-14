@@ -9,6 +9,7 @@ const base = require("./webpack.config")
 const config = {
     entry: {
         test: './src/test-h5.ts',
+        testjest: './src/test-jest.ts',
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -4,7 +4,7 @@
   "description": "javascript-interpreter",
   "main": "src/main.ts",
   "scripts": {
-    "test": "jest",
+    "test": "node script/jest-test262.js",
     "build": "NODE_ENV=production webpack",
     "dev-test": "webpack serve --config webpack.test.config.js"
   },
@@ -17,11 +17,11 @@
   "dependencies": {
     "@babel/parser": "^7.15.3",
     "acorn": "^8.4.1",
-    "jest": "^27.1.0",
-    "js-base64": "^3.6.1",
-    "webpack": "^5.51.1"
+    "js-base64": "^3.6.1"
   },
   "devDependencies": {
+    "jest": "^27.1.0",
+    "webpack": "^5.51.1",
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-typescript": "^7.15.0",
@@ -35,5 +35,12 @@
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.1.0",
     "webpack-merge": "^5.8.0"
+  },
+  "jest": {
+    "rootDir": ".",
+    "testEnvironment":"jsdom",
+    "moduleNameMapper": {
+      "@/(.*)$": "<rootDir>/$1"
+    }
   }
 }
